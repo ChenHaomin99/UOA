@@ -1,5 +1,9 @@
-# Create and switch to a new branch named branch2
-git checkout -b branch2
+# Create a new branch named branch2
+git branch branch2
+
+# Switch to the newly created branch
+git checkout branch2
+
 
 # Create and commit a file file4
 touch file4
