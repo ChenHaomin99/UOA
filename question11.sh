@@ -7,7 +7,7 @@ git add file4
 git commit -m "Add file4 in branch2"
 
 # Modify file4
-echo "New content" > file4
+echo "hi" > file4
 
 # Switch back to the main branch without committing changes
 git checkout main
