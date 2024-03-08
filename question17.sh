@@ -1,33 +1,40 @@
-# Create branch1 and switch to it
+
+cd git-practice-03
 git checkout -b branch1
-
-# Modify files to match branch1 configuration
-# Remove dir1/dir2/foo and dir3/bar_copy
-git rm dir1/dir2/foo dir3/bar_copy
-
-# Add newfile1 to the root directory
-echo "This is newfile1" > newfile1
-git add newfile1
-
-# Commit changes in branch1
-git commit -m "Modify files to match branch1 configuration"
-
-# Switch back to the main branch
-git checkout main
-
-# Create branch2 and switch to it
 git checkout -b branch2
 
-# Modify files to match branch2 configuration
-# Modify dir1/dir2/foo to dir1/dir2/foo_modified
-mv dir1/dir2/foo dir1/dir2/foo_modified
 
-# Add newfile2 to dir3
-echo "This is newfile2" > dir3/newfile2
-git add dir1/dir2/foo_modified dir3/newfile2
 
-# Commit changes in branch2
-git commit -m "Modify files to match branch2 configuration"
 
-# Switch back to the main branch
+rm -rf dir1/dir2
+mv dir3/bar_copy newfile1
+git rm dir3/bar
+
+
+
+
+git add .
+git commit -m "Modify files for branch1"
+
+
+# Modify files to match the "branch2" configuration
+mv dir1/foo dir1/dir2/foo_modified
+echo "This is branch2 newfile2" > dir1/dir3/newfile2
+git rm newfile1
+git rm dir3/bar_copy
+
+
+# Add changes
+git add .
+git commit -m "Modify files for branch2"
+
+
+# Switch to "branch1" and verify
+git checkout branch1
+ls -R
+
+# Switch to "branch2" and verify
+git checkout branch2
+ls -R
+
 git checkout main
